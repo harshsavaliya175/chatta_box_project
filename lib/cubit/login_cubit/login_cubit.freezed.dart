@@ -16,19 +16,29 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LoginState {
+  bool get checkBoxValue => throw _privateConstructorUsedError;
+  bool get passwordVisibility => throw _privateConstructorUsedError;
+  bool get emailFocusBool => throw _privateConstructorUsedError;
+  bool get passwordFocusBool => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(bool checkBoxValue, bool passwordVisibility,
+            bool emailFocusBool, bool passwordFocusBool)
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(bool checkBoxValue, bool passwordVisibility,
+            bool emailFocusBool, bool passwordFocusBool)?
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(bool checkBoxValue, bool passwordVisibility,
+            bool emailFocusBool, bool passwordFocusBool)?
+        initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +58,10 @@ mixin _$LoginState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $LoginStateCopyWith<LoginState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,6 +69,12 @@ abstract class $LoginStateCopyWith<$Res> {
   factory $LoginStateCopyWith(
           LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res, LoginState>;
+  @useResult
+  $Res call(
+      {bool checkBoxValue,
+      bool passwordVisibility,
+      bool emailFocusBool,
+      bool passwordFocusBool});
 }
 
 /// @nodoc
@@ -66,13 +86,49 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? checkBoxValue = null,
+    Object? passwordVisibility = null,
+    Object? emailFocusBool = null,
+    Object? passwordFocusBool = null,
+  }) {
+    return _then(_value.copyWith(
+      checkBoxValue: null == checkBoxValue
+          ? _value.checkBoxValue
+          : checkBoxValue // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordVisibility: null == passwordVisibility
+          ? _value.passwordVisibility
+          : passwordVisibility // ignore: cast_nullable_to_non_nullable
+              as bool,
+      emailFocusBool: null == emailFocusBool
+          ? _value.emailFocusBool
+          : emailFocusBool // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordFocusBool: null == passwordFocusBool
+          ? _value.passwordFocusBool
+          : passwordFocusBool // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
+abstract class _$$InitialImplCopyWith<$Res>
+    implements $LoginStateCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
           _$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool checkBoxValue,
+      bool passwordVisibility,
+      bool emailFocusBool,
+      bool passwordFocusBool});
 }
 
 /// @nodoc
@@ -82,51 +138,121 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? checkBoxValue = null,
+    Object? passwordVisibility = null,
+    Object? emailFocusBool = null,
+    Object? passwordFocusBool = null,
+  }) {
+    return _then(_$InitialImpl(
+      checkBoxValue: null == checkBoxValue
+          ? _value.checkBoxValue
+          : checkBoxValue // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordVisibility: null == passwordVisibility
+          ? _value.passwordVisibility
+          : passwordVisibility // ignore: cast_nullable_to_non_nullable
+              as bool,
+      emailFocusBool: null == emailFocusBool
+          ? _value.emailFocusBool
+          : emailFocusBool // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordFocusBool: null == passwordFocusBool
+          ? _value.passwordFocusBool
+          : passwordFocusBool // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+  const _$InitialImpl(
+      {this.checkBoxValue = false,
+      this.passwordVisibility = false,
+      this.emailFocusBool = false,
+      this.passwordFocusBool = false});
+
+  @override
+  @JsonKey()
+  final bool checkBoxValue;
+  @override
+  @JsonKey()
+  final bool passwordVisibility;
+  @override
+  @JsonKey()
+  final bool emailFocusBool;
+  @override
+  @JsonKey()
+  final bool passwordFocusBool;
 
   @override
   String toString() {
-    return 'LoginState.initial()';
+    return 'LoginState.initial(checkBoxValue: $checkBoxValue, passwordVisibility: $passwordVisibility, emailFocusBool: $emailFocusBool, passwordFocusBool: $passwordFocusBool)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$InitialImpl &&
+            (identical(other.checkBoxValue, checkBoxValue) ||
+                other.checkBoxValue == checkBoxValue) &&
+            (identical(other.passwordVisibility, passwordVisibility) ||
+                other.passwordVisibility == passwordVisibility) &&
+            (identical(other.emailFocusBool, emailFocusBool) ||
+                other.emailFocusBool == emailFocusBool) &&
+            (identical(other.passwordFocusBool, passwordFocusBool) ||
+                other.passwordFocusBool == passwordFocusBool));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, checkBoxValue,
+      passwordVisibility, emailFocusBool, passwordFocusBool);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function(bool checkBoxValue, bool passwordVisibility,
+            bool emailFocusBool, bool passwordFocusBool)
+        initial,
   }) {
-    return initial();
+    return initial(
+        checkBoxValue, passwordVisibility, emailFocusBool, passwordFocusBool);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
+    TResult? Function(bool checkBoxValue, bool passwordVisibility,
+            bool emailFocusBool, bool passwordFocusBool)?
+        initial,
   }) {
-    return initial?.call();
+    return initial?.call(
+        checkBoxValue, passwordVisibility, emailFocusBool, passwordFocusBool);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function(bool checkBoxValue, bool passwordVisibility,
+            bool emailFocusBool, bool passwordFocusBool)?
+        initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial();
+      return initial(
+          checkBoxValue, passwordVisibility, emailFocusBool, passwordFocusBool);
     }
     return orElse();
   }
@@ -161,5 +287,22 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements LoginState {
-  const factory _Initial() = _$InitialImpl;
+  const factory _Initial(
+      {final bool checkBoxValue,
+      final bool passwordVisibility,
+      final bool emailFocusBool,
+      final bool passwordFocusBool}) = _$InitialImpl;
+
+  @override
+  bool get checkBoxValue;
+  @override
+  bool get passwordVisibility;
+  @override
+  bool get emailFocusBool;
+  @override
+  bool get passwordFocusBool;
+  @override
+  @JsonKey(ignore: true)
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

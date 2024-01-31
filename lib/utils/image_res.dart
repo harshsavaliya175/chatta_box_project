@@ -7,4 +7,6 @@ class ImageRes {
   static const String openEyeIcon = '${baseImagePath}ic_open_eye.png';
   static const String lockIcon = '${baseImagePath}ic_lock_check.png';
   static const String userIcon = '${baseImagePath}ic_user.png';
+  static const String backGroundImage =
+      '${baseImagePath}ic_chatta_box_back_ground.png';
 }

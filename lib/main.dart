@@ -8,10 +8,15 @@ import 'package:chattabox_project/screens/registration_screen.dart';
 import 'package:chattabox_project/screens/splash_screen.dart';
 import 'package:chattabox_project/utils/color_res.dart';
 import 'package:chattabox_project/utils/routes_constants.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+import 'generated/codegen_loader.g.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   runApp(
     MultiBlocProvider(
       providers: [
@@ -28,7 +33,15 @@ void main() {
           create: (BuildContext context) => ForgotPasswordCubit(),
         ),
       ],
-      child: const MyApp(),
+      child: EasyLocalization(
+        path: 'assets/translations',
+        supportedLocales: const [
+          Locale('en'),
+        ],
+        fallbackLocale: const Locale('en'),
+        assetLoader: const CodegenLoader(),
+        child: const MyApp(),
+      ),
     ),
   );
 }
@@ -39,6 +52,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: ColorRes.themeColor),
@@ -46,11 +62,11 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         RouteNames.splashScreen: (BuildContext context) => const SplashScreen(),
-        RouteNames.loginScreen: (BuildContext context) => const LoginScreen(),
+        RouteNames.loginScreen: (BuildContext context) => LoginScreen(),
         RouteNames.registrationScreen: (BuildContext context) =>
-            const RegistrationScreen(),
+            RegistrationScreen(),
         RouteNames.forgotPasswordScreen: (BuildContext context) =>
-            const ForgotPassWordScreen(),
+            ForgotPassWordScreen(),
       },
     );
   }

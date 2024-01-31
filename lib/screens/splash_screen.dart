@@ -1,9 +1,9 @@
-import 'package:chattabox_project/cubit/splash_cubit/splash_cubit.dart';
-import 'package:chattabox_project/utils/routes_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../cubit/splash_cubit/splash_cubit.dart';
 import '../utils/image_res.dart';
+import '../utils/routes_constants.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -18,7 +18,15 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: BlocConsumer<SplashCubit, SplashState>(
         builder: (BuildContext context, SplashState state) {
-          return Center(
+          return Container(
+            height: height,
+            width: width,
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(ImageRes.backGroundImage),
+              ),
+            ),
             child: Image.asset(
               ImageRes.chattaBox,
               height: height * 0.20,
