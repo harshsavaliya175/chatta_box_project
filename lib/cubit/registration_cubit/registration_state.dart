@@ -9,5 +9,8 @@ class RegistrationState with _$RegistrationState {
     @Default(false) bool emailFocusBool,
     @Default(false) bool passwordFocusBool,
     @Default(false) bool confirmPasswordFocusBool,
+    @Default(false) bool isValidate,
+    @Default(false) bool isLoaded,
+    bool? isRegisterSuccess,
   }) = _Initial;
 }

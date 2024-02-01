@@ -20,24 +20,45 @@ mixin _$LoginState {
   bool get passwordVisibility => throw _privateConstructorUsedError;
   bool get emailFocusBool => throw _privateConstructorUsedError;
   bool get passwordFocusBool => throw _privateConstructorUsedError;
+  bool get isValidate => throw _privateConstructorUsedError;
+  bool get isLoaded => throw _privateConstructorUsedError;
+  bool? get isLoginSuccess => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool checkBoxValue, bool passwordVisibility,
-            bool emailFocusBool, bool passwordFocusBool)
+    required TResult Function(
+            bool checkBoxValue,
+            bool passwordVisibility,
+            bool emailFocusBool,
+            bool passwordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isLoginSuccess)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool checkBoxValue, bool passwordVisibility,
-            bool emailFocusBool, bool passwordFocusBool)?
+    TResult? Function(
+            bool checkBoxValue,
+            bool passwordVisibility,
+            bool emailFocusBool,
+            bool passwordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isLoginSuccess)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool checkBoxValue, bool passwordVisibility,
-            bool emailFocusBool, bool passwordFocusBool)?
+    TResult Function(
+            bool checkBoxValue,
+            bool passwordVisibility,
+            bool emailFocusBool,
+            bool passwordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isLoginSuccess)?
         initial,
     required TResult orElse(),
   }) =>
@@ -74,7 +95,10 @@ abstract class $LoginStateCopyWith<$Res> {
       {bool checkBoxValue,
       bool passwordVisibility,
       bool emailFocusBool,
-      bool passwordFocusBool});
+      bool passwordFocusBool,
+      bool isValidate,
+      bool isLoaded,
+      bool? isLoginSuccess});
 }
 
 /// @nodoc
@@ -94,6 +118,9 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
     Object? passwordVisibility = null,
     Object? emailFocusBool = null,
     Object? passwordFocusBool = null,
+    Object? isValidate = null,
+    Object? isLoaded = null,
+    Object? isLoginSuccess = freezed,
   }) {
     return _then(_value.copyWith(
       checkBoxValue: null == checkBoxValue
@@ -112,6 +139,18 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
           ? _value.passwordFocusBool
           : passwordFocusBool // ignore: cast_nullable_to_non_nullable
               as bool,
+      isValidate: null == isValidate
+          ? _value.isValidate
+          : isValidate // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoaded: null == isLoaded
+          ? _value.isLoaded
+          : isLoaded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoginSuccess: freezed == isLoginSuccess
+          ? _value.isLoginSuccess
+          : isLoginSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -128,7 +167,10 @@ abstract class _$$InitialImplCopyWith<$Res>
       {bool checkBoxValue,
       bool passwordVisibility,
       bool emailFocusBool,
-      bool passwordFocusBool});
+      bool passwordFocusBool,
+      bool isValidate,
+      bool isLoaded,
+      bool? isLoginSuccess});
 }
 
 /// @nodoc
@@ -146,6 +188,9 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? passwordVisibility = null,
     Object? emailFocusBool = null,
     Object? passwordFocusBool = null,
+    Object? isValidate = null,
+    Object? isLoaded = null,
+    Object? isLoginSuccess = freezed,
   }) {
     return _then(_$InitialImpl(
       checkBoxValue: null == checkBoxValue
@@ -164,6 +209,18 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.passwordFocusBool
           : passwordFocusBool // ignore: cast_nullable_to_non_nullable
               as bool,
+      isValidate: null == isValidate
+          ? _value.isValidate
+          : isValidate // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoaded: null == isLoaded
+          ? _value.isLoaded
+          : isLoaded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoginSuccess: freezed == isLoginSuccess
+          ? _value.isLoginSuccess
+          : isLoginSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -175,7 +232,10 @@ class _$InitialImpl implements _Initial {
       {this.checkBoxValue = false,
       this.passwordVisibility = false,
       this.emailFocusBool = false,
-      this.passwordFocusBool = false});
+      this.passwordFocusBool = false,
+      this.isValidate = false,
+      this.isLoaded = false,
+      this.isLoginSuccess});
 
   @override
   @JsonKey()
@@ -189,10 +249,18 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final bool passwordFocusBool;
+  @override
+  @JsonKey()
+  final bool isValidate;
+  @override
+  @JsonKey()
+  final bool isLoaded;
+  @override
+  final bool? isLoginSuccess;
 
   @override
   String toString() {
-    return 'LoginState.initial(checkBoxValue: $checkBoxValue, passwordVisibility: $passwordVisibility, emailFocusBool: $emailFocusBool, passwordFocusBool: $passwordFocusBool)';
+    return 'LoginState.initial(checkBoxValue: $checkBoxValue, passwordVisibility: $passwordVisibility, emailFocusBool: $emailFocusBool, passwordFocusBool: $passwordFocusBool, isValidate: $isValidate, isLoaded: $isLoaded, isLoginSuccess: $isLoginSuccess)';
   }
 
   @override
@@ -207,12 +275,25 @@ class _$InitialImpl implements _Initial {
             (identical(other.emailFocusBool, emailFocusBool) ||
                 other.emailFocusBool == emailFocusBool) &&
             (identical(other.passwordFocusBool, passwordFocusBool) ||
-                other.passwordFocusBool == passwordFocusBool));
+                other.passwordFocusBool == passwordFocusBool) &&
+            (identical(other.isValidate, isValidate) ||
+                other.isValidate == isValidate) &&
+            (identical(other.isLoaded, isLoaded) ||
+                other.isLoaded == isLoaded) &&
+            (identical(other.isLoginSuccess, isLoginSuccess) ||
+                other.isLoginSuccess == isLoginSuccess));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, checkBoxValue,
-      passwordVisibility, emailFocusBool, passwordFocusBool);
+  int get hashCode => Object.hash(
+      runtimeType,
+      checkBoxValue,
+      passwordVisibility,
+      emailFocusBool,
+      passwordFocusBool,
+      isValidate,
+      isLoaded,
+      isLoginSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -223,36 +304,54 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool checkBoxValue, bool passwordVisibility,
-            bool emailFocusBool, bool passwordFocusBool)
+    required TResult Function(
+            bool checkBoxValue,
+            bool passwordVisibility,
+            bool emailFocusBool,
+            bool passwordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isLoginSuccess)
         initial,
   }) {
-    return initial(
-        checkBoxValue, passwordVisibility, emailFocusBool, passwordFocusBool);
+    return initial(checkBoxValue, passwordVisibility, emailFocusBool,
+        passwordFocusBool, isValidate, isLoaded, isLoginSuccess);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool checkBoxValue, bool passwordVisibility,
-            bool emailFocusBool, bool passwordFocusBool)?
+    TResult? Function(
+            bool checkBoxValue,
+            bool passwordVisibility,
+            bool emailFocusBool,
+            bool passwordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isLoginSuccess)?
         initial,
   }) {
-    return initial?.call(
-        checkBoxValue, passwordVisibility, emailFocusBool, passwordFocusBool);
+    return initial?.call(checkBoxValue, passwordVisibility, emailFocusBool,
+        passwordFocusBool, isValidate, isLoaded, isLoginSuccess);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool checkBoxValue, bool passwordVisibility,
-            bool emailFocusBool, bool passwordFocusBool)?
+    TResult Function(
+            bool checkBoxValue,
+            bool passwordVisibility,
+            bool emailFocusBool,
+            bool passwordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isLoginSuccess)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(
-          checkBoxValue, passwordVisibility, emailFocusBool, passwordFocusBool);
+      return initial(checkBoxValue, passwordVisibility, emailFocusBool,
+          passwordFocusBool, isValidate, isLoaded, isLoginSuccess);
     }
     return orElse();
   }
@@ -291,7 +390,10 @@ abstract class _Initial implements LoginState {
       {final bool checkBoxValue,
       final bool passwordVisibility,
       final bool emailFocusBool,
-      final bool passwordFocusBool}) = _$InitialImpl;
+      final bool passwordFocusBool,
+      final bool isValidate,
+      final bool isLoaded,
+      final bool? isLoginSuccess}) = _$InitialImpl;
 
   @override
   bool get checkBoxValue;
@@ -301,6 +403,12 @@ abstract class _Initial implements LoginState {
   bool get emailFocusBool;
   @override
   bool get passwordFocusBool;
+  @override
+  bool get isValidate;
+  @override
+  bool get isLoaded;
+  @override
+  bool? get isLoginSuccess;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

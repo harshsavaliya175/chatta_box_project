@@ -3,6 +3,7 @@ import 'package:chattabox_project/cubit/login_cubit/login_cubit.dart';
 import 'package:chattabox_project/cubit/registration_cubit/registration_cubit.dart';
 import 'package:chattabox_project/cubit/splash_cubit/splash_cubit.dart';
 import 'package:chattabox_project/screens/forgot_password_screen.dart';
+import 'package:chattabox_project/screens/home_screen.dart';
 import 'package:chattabox_project/screens/login_screen.dart';
 import 'package:chattabox_project/screens/registration_screen.dart';
 import 'package:chattabox_project/screens/splash_screen.dart';
@@ -58,10 +59,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: ColorRes.themeColor),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       routes: {
         RouteNames.splashScreen: (BuildContext context) => const SplashScreen(),
+        RouteNames.homeScreen: (BuildContext context) => const HomeScreen(),
         RouteNames.loginScreen: (BuildContext context) => LoginScreen(),
         RouteNames.registrationScreen: (BuildContext context) =>
             RegistrationScreen(),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../utils/color_res.dart';
-import 'common_text.dart';
 
 Widget commonMaterialButton({
-  required String buttonName,
+  // required String buttonName,
   required VoidCallback onPressed,
   double? buttonHeight,
-  double? buttonFontSize,
+  // double? buttonFontSize,
+  required Widget materialButtonChild,
 }) {
   return MaterialButton(
     height: buttonHeight,
@@ -16,10 +16,6 @@ Widget commonMaterialButton({
     onPressed: () {
       onPressed();
     },
-    child: commonText(
-      text: buttonName,
-      fontColor: ColorRes.whiteColor,
-      fontSize: buttonFontSize,
-    ),
+    child: materialButtonChild,
   );
 }

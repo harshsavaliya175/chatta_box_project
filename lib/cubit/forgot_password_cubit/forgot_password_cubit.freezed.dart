@@ -17,19 +17,28 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ForgotPasswordState {
   bool get emailFocusBool => throw _privateConstructorUsedError;
+  bool get isValidate => throw _privateConstructorUsedError;
+  bool get isLoaded => throw _privateConstructorUsedError;
+  bool? get isForgotPasswordSuccess => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool emailFocusBool) initial,
+    required TResult Function(bool emailFocusBool, bool isValidate,
+            bool isLoaded, bool? isForgotPasswordSuccess)
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool emailFocusBool)? initial,
+    TResult? Function(bool emailFocusBool, bool isValidate, bool isLoaded,
+            bool? isForgotPasswordSuccess)?
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool emailFocusBool)? initial,
+    TResult Function(bool emailFocusBool, bool isValidate, bool isLoaded,
+            bool? isForgotPasswordSuccess)?
+        initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +70,11 @@ abstract class $ForgotPasswordStateCopyWith<$Res> {
           ForgotPasswordState value, $Res Function(ForgotPasswordState) then) =
       _$ForgotPasswordStateCopyWithImpl<$Res, ForgotPasswordState>;
   @useResult
-  $Res call({bool emailFocusBool});
+  $Res call(
+      {bool emailFocusBool,
+      bool isValidate,
+      bool isLoaded,
+      bool? isForgotPasswordSuccess});
 }
 
 /// @nodoc
@@ -78,12 +91,27 @@ class _$ForgotPasswordStateCopyWithImpl<$Res, $Val extends ForgotPasswordState>
   @override
   $Res call({
     Object? emailFocusBool = null,
+    Object? isValidate = null,
+    Object? isLoaded = null,
+    Object? isForgotPasswordSuccess = freezed,
   }) {
     return _then(_value.copyWith(
       emailFocusBool: null == emailFocusBool
           ? _value.emailFocusBool
           : emailFocusBool // ignore: cast_nullable_to_non_nullable
               as bool,
+      isValidate: null == isValidate
+          ? _value.isValidate
+          : isValidate // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoaded: null == isLoaded
+          ? _value.isLoaded
+          : isLoaded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isForgotPasswordSuccess: freezed == isForgotPasswordSuccess
+          ? _value.isForgotPasswordSuccess
+          : isForgotPasswordSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -96,7 +124,11 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool emailFocusBool});
+  $Res call(
+      {bool emailFocusBool,
+      bool isValidate,
+      bool isLoaded,
+      bool? isForgotPasswordSuccess});
 }
 
 /// @nodoc
@@ -111,12 +143,27 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? emailFocusBool = null,
+    Object? isValidate = null,
+    Object? isLoaded = null,
+    Object? isForgotPasswordSuccess = freezed,
   }) {
     return _then(_$InitialImpl(
       emailFocusBool: null == emailFocusBool
           ? _value.emailFocusBool
           : emailFocusBool // ignore: cast_nullable_to_non_nullable
               as bool,
+      isValidate: null == isValidate
+          ? _value.isValidate
+          : isValidate // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoaded: null == isLoaded
+          ? _value.isLoaded
+          : isLoaded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isForgotPasswordSuccess: freezed == isForgotPasswordSuccess
+          ? _value.isForgotPasswordSuccess
+          : isForgotPasswordSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -124,15 +171,27 @@ class __$$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl({this.emailFocusBool = false});
+  const _$InitialImpl(
+      {this.emailFocusBool = false,
+      this.isValidate = false,
+      this.isLoaded = false,
+      this.isForgotPasswordSuccess});
 
   @override
   @JsonKey()
   final bool emailFocusBool;
+  @override
+  @JsonKey()
+  final bool isValidate;
+  @override
+  @JsonKey()
+  final bool isLoaded;
+  @override
+  final bool? isForgotPasswordSuccess;
 
   @override
   String toString() {
-    return 'ForgotPasswordState.initial(emailFocusBool: $emailFocusBool)';
+    return 'ForgotPasswordState.initial(emailFocusBool: $emailFocusBool, isValidate: $isValidate, isLoaded: $isLoaded, isForgotPasswordSuccess: $isForgotPasswordSuccess)';
   }
 
   @override
@@ -141,11 +200,19 @@ class _$InitialImpl implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
             (identical(other.emailFocusBool, emailFocusBool) ||
-                other.emailFocusBool == emailFocusBool));
+                other.emailFocusBool == emailFocusBool) &&
+            (identical(other.isValidate, isValidate) ||
+                other.isValidate == isValidate) &&
+            (identical(other.isLoaded, isLoaded) ||
+                other.isLoaded == isLoaded) &&
+            (identical(
+                    other.isForgotPasswordSuccess, isForgotPasswordSuccess) ||
+                other.isForgotPasswordSuccess == isForgotPasswordSuccess));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, emailFocusBool);
+  int get hashCode => Object.hash(runtimeType, emailFocusBool, isValidate,
+      isLoaded, isForgotPasswordSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -156,27 +223,36 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool emailFocusBool) initial,
+    required TResult Function(bool emailFocusBool, bool isValidate,
+            bool isLoaded, bool? isForgotPasswordSuccess)
+        initial,
   }) {
-    return initial(emailFocusBool);
+    return initial(
+        emailFocusBool, isValidate, isLoaded, isForgotPasswordSuccess);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool emailFocusBool)? initial,
+    TResult? Function(bool emailFocusBool, bool isValidate, bool isLoaded,
+            bool? isForgotPasswordSuccess)?
+        initial,
   }) {
-    return initial?.call(emailFocusBool);
+    return initial?.call(
+        emailFocusBool, isValidate, isLoaded, isForgotPasswordSuccess);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool emailFocusBool)? initial,
+    TResult Function(bool emailFocusBool, bool isValidate, bool isLoaded,
+            bool? isForgotPasswordSuccess)?
+        initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(emailFocusBool);
+      return initial(
+          emailFocusBool, isValidate, isLoaded, isForgotPasswordSuccess);
     }
     return orElse();
   }
@@ -211,10 +287,20 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements ForgotPasswordState {
-  const factory _Initial({final bool emailFocusBool}) = _$InitialImpl;
+  const factory _Initial(
+      {final bool emailFocusBool,
+      final bool isValidate,
+      final bool isLoaded,
+      final bool? isForgotPasswordSuccess}) = _$InitialImpl;
 
   @override
   bool get emailFocusBool;
+  @override
+  bool get isValidate;
+  @override
+  bool get isLoaded;
+  @override
+  bool? get isForgotPasswordSuccess;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

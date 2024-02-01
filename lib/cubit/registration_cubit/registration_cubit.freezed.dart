@@ -22,6 +22,9 @@ mixin _$RegistrationState {
   bool get emailFocusBool => throw _privateConstructorUsedError;
   bool get passwordFocusBool => throw _privateConstructorUsedError;
   bool get confirmPasswordFocusBool => throw _privateConstructorUsedError;
+  bool get isValidate => throw _privateConstructorUsedError;
+  bool get isLoaded => throw _privateConstructorUsedError;
+  bool? get isRegisterSuccess => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -30,7 +33,10 @@ mixin _$RegistrationState {
             bool nameFocusBool,
             bool emailFocusBool,
             bool passwordFocusBool,
-            bool confirmPasswordFocusBool)
+            bool confirmPasswordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isRegisterSuccess)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,7 +48,10 @@ mixin _$RegistrationState {
             bool nameFocusBool,
             bool emailFocusBool,
             bool passwordFocusBool,
-            bool confirmPasswordFocusBool)?
+            bool confirmPasswordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isRegisterSuccess)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,7 +63,10 @@ mixin _$RegistrationState {
             bool nameFocusBool,
             bool emailFocusBool,
             bool passwordFocusBool,
-            bool confirmPasswordFocusBool)?
+            bool confirmPasswordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isRegisterSuccess)?
         initial,
     required TResult orElse(),
   }) =>
@@ -93,7 +105,10 @@ abstract class $RegistrationStateCopyWith<$Res> {
       bool nameFocusBool,
       bool emailFocusBool,
       bool passwordFocusBool,
-      bool confirmPasswordFocusBool});
+      bool confirmPasswordFocusBool,
+      bool isValidate,
+      bool isLoaded,
+      bool? isRegisterSuccess});
 }
 
 /// @nodoc
@@ -115,6 +130,9 @@ class _$RegistrationStateCopyWithImpl<$Res, $Val extends RegistrationState>
     Object? emailFocusBool = null,
     Object? passwordFocusBool = null,
     Object? confirmPasswordFocusBool = null,
+    Object? isValidate = null,
+    Object? isLoaded = null,
+    Object? isRegisterSuccess = freezed,
   }) {
     return _then(_value.copyWith(
       passwordVisibility: freezed == passwordVisibility
@@ -141,6 +159,18 @@ class _$RegistrationStateCopyWithImpl<$Res, $Val extends RegistrationState>
           ? _value.confirmPasswordFocusBool
           : confirmPasswordFocusBool // ignore: cast_nullable_to_non_nullable
               as bool,
+      isValidate: null == isValidate
+          ? _value.isValidate
+          : isValidate // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoaded: null == isLoaded
+          ? _value.isLoaded
+          : isLoaded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRegisterSuccess: freezed == isRegisterSuccess
+          ? _value.isRegisterSuccess
+          : isRegisterSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -159,7 +189,10 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool nameFocusBool,
       bool emailFocusBool,
       bool passwordFocusBool,
-      bool confirmPasswordFocusBool});
+      bool confirmPasswordFocusBool,
+      bool isValidate,
+      bool isLoaded,
+      bool? isRegisterSuccess});
 }
 
 /// @nodoc
@@ -179,6 +212,9 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? emailFocusBool = null,
     Object? passwordFocusBool = null,
     Object? confirmPasswordFocusBool = null,
+    Object? isValidate = null,
+    Object? isLoaded = null,
+    Object? isRegisterSuccess = freezed,
   }) {
     return _then(_$InitialImpl(
       passwordVisibility: freezed == passwordVisibility
@@ -203,6 +239,18 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.confirmPasswordFocusBool
           : confirmPasswordFocusBool // ignore: cast_nullable_to_non_nullable
               as bool,
+      isValidate: null == isValidate
+          ? _value.isValidate
+          : isValidate // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoaded: null == isLoaded
+          ? _value.isLoaded
+          : isLoaded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRegisterSuccess: freezed == isRegisterSuccess
+          ? _value.isRegisterSuccess
+          : isRegisterSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -216,7 +264,10 @@ class _$InitialImpl implements _Initial {
       this.nameFocusBool = false,
       this.emailFocusBool = false,
       this.passwordFocusBool = false,
-      this.confirmPasswordFocusBool = false});
+      this.confirmPasswordFocusBool = false,
+      this.isValidate = false,
+      this.isLoaded = false,
+      this.isRegisterSuccess});
 
   @override
   @JsonKey()
@@ -236,10 +287,18 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final bool confirmPasswordFocusBool;
+  @override
+  @JsonKey()
+  final bool isValidate;
+  @override
+  @JsonKey()
+  final bool isLoaded;
+  @override
+  final bool? isRegisterSuccess;
 
   @override
   String toString() {
-    return 'RegistrationState.initial(passwordVisibility: $passwordVisibility, confirmPasswordVisibility: $confirmPasswordVisibility, nameFocusBool: $nameFocusBool, emailFocusBool: $emailFocusBool, passwordFocusBool: $passwordFocusBool, confirmPasswordFocusBool: $confirmPasswordFocusBool)';
+    return 'RegistrationState.initial(passwordVisibility: $passwordVisibility, confirmPasswordVisibility: $confirmPasswordVisibility, nameFocusBool: $nameFocusBool, emailFocusBool: $emailFocusBool, passwordFocusBool: $passwordFocusBool, confirmPasswordFocusBool: $confirmPasswordFocusBool, isValidate: $isValidate, isLoaded: $isLoaded, isRegisterSuccess: $isRegisterSuccess)';
   }
 
   @override
@@ -259,7 +318,13 @@ class _$InitialImpl implements _Initial {
                 other.passwordFocusBool == passwordFocusBool) &&
             (identical(
                     other.confirmPasswordFocusBool, confirmPasswordFocusBool) ||
-                other.confirmPasswordFocusBool == confirmPasswordFocusBool));
+                other.confirmPasswordFocusBool == confirmPasswordFocusBool) &&
+            (identical(other.isValidate, isValidate) ||
+                other.isValidate == isValidate) &&
+            (identical(other.isLoaded, isLoaded) ||
+                other.isLoaded == isLoaded) &&
+            (identical(other.isRegisterSuccess, isRegisterSuccess) ||
+                other.isRegisterSuccess == isRegisterSuccess));
   }
 
   @override
@@ -270,7 +335,10 @@ class _$InitialImpl implements _Initial {
       nameFocusBool,
       emailFocusBool,
       passwordFocusBool,
-      confirmPasswordFocusBool);
+      confirmPasswordFocusBool,
+      isValidate,
+      isLoaded,
+      isRegisterSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -287,11 +355,22 @@ class _$InitialImpl implements _Initial {
             bool nameFocusBool,
             bool emailFocusBool,
             bool passwordFocusBool,
-            bool confirmPasswordFocusBool)
+            bool confirmPasswordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isRegisterSuccess)
         initial,
   }) {
-    return initial(passwordVisibility, confirmPasswordVisibility, nameFocusBool,
-        emailFocusBool, passwordFocusBool, confirmPasswordFocusBool);
+    return initial(
+        passwordVisibility,
+        confirmPasswordVisibility,
+        nameFocusBool,
+        emailFocusBool,
+        passwordFocusBool,
+        confirmPasswordFocusBool,
+        isValidate,
+        isLoaded,
+        isRegisterSuccess);
   }
 
   @override
@@ -303,7 +382,10 @@ class _$InitialImpl implements _Initial {
             bool nameFocusBool,
             bool emailFocusBool,
             bool passwordFocusBool,
-            bool confirmPasswordFocusBool)?
+            bool confirmPasswordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isRegisterSuccess)?
         initial,
   }) {
     return initial?.call(
@@ -312,7 +394,10 @@ class _$InitialImpl implements _Initial {
         nameFocusBool,
         emailFocusBool,
         passwordFocusBool,
-        confirmPasswordFocusBool);
+        confirmPasswordFocusBool,
+        isValidate,
+        isLoaded,
+        isRegisterSuccess);
   }
 
   @override
@@ -324,7 +409,10 @@ class _$InitialImpl implements _Initial {
             bool nameFocusBool,
             bool emailFocusBool,
             bool passwordFocusBool,
-            bool confirmPasswordFocusBool)?
+            bool confirmPasswordFocusBool,
+            bool isValidate,
+            bool isLoaded,
+            bool? isRegisterSuccess)?
         initial,
     required TResult orElse(),
   }) {
@@ -335,7 +423,10 @@ class _$InitialImpl implements _Initial {
           nameFocusBool,
           emailFocusBool,
           passwordFocusBool,
-          confirmPasswordFocusBool);
+          confirmPasswordFocusBool,
+          isValidate,
+          isLoaded,
+          isRegisterSuccess);
     }
     return orElse();
   }
@@ -376,7 +467,10 @@ abstract class _Initial implements RegistrationState {
       final bool nameFocusBool,
       final bool emailFocusBool,
       final bool passwordFocusBool,
-      final bool confirmPasswordFocusBool}) = _$InitialImpl;
+      final bool confirmPasswordFocusBool,
+      final bool isValidate,
+      final bool isLoaded,
+      final bool? isRegisterSuccess}) = _$InitialImpl;
 
   @override
   dynamic get passwordVisibility;
@@ -390,6 +484,12 @@ abstract class _Initial implements RegistrationState {
   bool get passwordFocusBool;
   @override
   bool get confirmPasswordFocusBool;
+  @override
+  bool get isValidate;
+  @override
+  bool get isLoaded;
+  @override
+  bool? get isRegisterSuccess;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
